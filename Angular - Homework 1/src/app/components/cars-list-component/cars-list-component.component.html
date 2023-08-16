@@ -1,0 +1,33 @@
+<header>
+  <h2>{{ header }}</h2>
+</header>
+
+<app-filter-options-component
+  (showRented)="allRentedCars()"
+  (showAvailable)="allAvailableCars()"
+  (resetFilter)="fullReset()"
+></app-filter-options-component>
+
+<div class="cars-list">
+  <div *ngFor="let car of cars_list" class="car-card">
+    <h2>{{ car.model }}</h2>
+    <img src="{{ car.image }}" alt="" width="200px" />
+    <h3>{{ car.engineType }}</h3>
+    <h4>{{ car.priceToRent | currency : "USD" }}</h4>
+    <p *ngIf="car.isRented === false" class="availability-text">Available</p>
+    <button
+      (click)="rentCar(car.id)"
+      *ngIf="car.isRented === false"
+      class="action-button rent-button"
+    >
+      Rent
+    </button>
+    <button
+      (click)="returnCar(car.id)"
+      *ngIf="car.isRented === true"
+      class="action-button return-button"
+    >
+      Return
+    </button>
+  </div>
+</div>

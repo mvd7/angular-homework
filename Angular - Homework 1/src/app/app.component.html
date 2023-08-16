@@ -1,0 +1,10 @@
+<header>
+  <h1>{{ title }}</h1>
+</header>
+
+<app-cars-list-component
+  (carIdToRent)="onRentCar($event)"
+  (carIdToReturn)="onReturnCar($event)"
+  [cars_list]="cars"
+>
+</app-cars-list-component>
