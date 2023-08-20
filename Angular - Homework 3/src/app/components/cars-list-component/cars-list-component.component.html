@@ -1,0 +1,51 @@
+<header>
+  <h2>{{ header }}</h2>
+</header>
+
+<section class="filter-section">
+  <app-filter-options-component
+    (showRented)="allRentedCars()"
+    (showAvailable)="allAvailableCars()"
+    (resetFilter)="fullReset()"
+  ></app-filter-options-component>
+
+  <div class="sort-container">
+    <label class="sort-label" for="sortDirection">Sort cars:</label>
+    <select
+      class="sort-select"
+      name="sortDirection"
+      id="sortDirection"
+      [(ngModel)]="selectedSortOption"
+    >
+      <option value="ascending">Ascending</option>
+      <option value="descending">Descending</option>
+    </select>
+  </div>
+</section>
+
+<div class="cars-list">
+  <div
+    *ngFor="let car of cars_list | filter : selectedSortOption"
+    class="car-card"
+  >
+    <h2>{{ car.model }}</h2>
+    <img src="{{ car.image }}" alt="" width="200px" />
+    <h3>{{ car.engineType }}</h3>
+    <h4>{{ car.priceToRent | currency : "USD" }}</h4>
+    <p *ngIf="car.isRented === false" class="availability-text">Available</p>
+    <button
+      (click)="rentCar(car.id)"
+      *ngIf="car.isRented === false"
+      class="action-button rent-button"
+    >
+      Rent
+    </button>
+    <button
+      (click)="returnCar(car.id)"
+      *ngIf="car.isRented === true"
+      class="action-button return-button"
+    >
+      Return
+    </button>
+  </div>
+</div>
