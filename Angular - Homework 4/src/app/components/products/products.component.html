@@ -1,0 +1,20 @@
+<section class="products-section">
+  <div class="section-title">Products</div>
+  <div class="product-card" *ngFor="let product of products_list">
+    <div class="card-content">
+      <h1>{{ product.name }}</h1>
+      <div class="product-image">
+        <img
+          src="https://static.thenounproject.com/png/778835-200.png"
+          alt="placeholder"
+        />
+      </div>
+      <h3>{{ product.price | currency }}</h3>
+      <span *ngIf="product.stock">Stock: {{ product.stock }}</span>
+      <h4 *ngIf="!product.stock">Out of stock</h4>
+      <button (click)="onClickOrder(product.id)" *ngIf="product.stock">
+        Order
+      </button>
+    </div>
+  </div>
+</section>
