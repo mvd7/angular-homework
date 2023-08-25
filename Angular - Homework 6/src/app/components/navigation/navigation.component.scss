@@ -1,0 +1,44 @@
+$primaryColor: #333;
+$secondaryColor: #444;
+$accentColor: #f39c12;
+
+header {
+  text-align: center;
+  background-color: $primaryColor;
+  color: white;
+  padding: 25px 0;
+
+  .title {
+    padding-bottom: 15px;
+  }
+
+  h1 {
+    font-size: 24px;
+  }
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  padding: 10px 0;
+  background-color: $secondaryColor;
+
+  li {
+    margin: 0 15px;
+  }
+
+  a {
+    text-decoration: none;
+    color: white;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: $accentColor;
+    }
+  }
+
+  .active {
+    color: $accentColor;
+  }
+}

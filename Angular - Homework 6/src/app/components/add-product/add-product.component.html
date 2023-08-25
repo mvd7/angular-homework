@@ -1,0 +1,80 @@
+<div class="center-box">
+  <div class="form-container">
+    <h1>Add Product</h1>
+    <form [formGroup]="newProductForm">
+      <div class="form-group">
+        <label>Name:</label>
+        <p
+          *ngIf="
+            newProductForm.get('name')?.invalid &&
+            newProductForm.get('name')?.touched
+          "
+          class="invalid"
+        >
+          This field is required.
+        </p>
+        <input type="text" id="name" formControlName="name" />
+      </div>
+      <div class="form-group">
+        <label>Description:</label>
+        <p
+          *ngIf="
+            newProductForm.get('description')?.invalid &&
+            newProductForm.get('description')?.touched
+          "
+          class="invalid"
+        >
+          This field is required.
+        </p>
+        <input type="text" id="description" formControlName="description" />
+      </div>
+      <div class="form-group">
+        <label>Price:</label>
+        <p
+          *ngIf="
+            newProductForm.get('price')?.invalid &&
+            newProductForm.get('price')?.touched
+          "
+          class="invalid"
+        >
+          The Price must be more than 0.
+        </p>
+        <input type="number" id="price" formControlName="price" />
+      </div>
+      <div class="form-group">
+        <label>Category:</label>
+        <p
+          *ngIf="
+            newProductForm.get('category')?.invalid &&
+            newProductForm.get('category')?.touched
+          "
+          class="invalid"
+        >
+          This field is required, and it must be one of
+          "Electronics,Clothing,Books,Sports".
+        </p>
+        <input type="text" id="category" formControlName="category" />
+      </div>
+      <div class="form-group">
+        <label>Stock:</label>
+        <p
+          *ngIf="
+            newProductForm.get('stock')?.invalid &&
+            newProductForm.get('stock')?.touched
+          "
+          class="invalid"
+        >
+          The Stock must be more than 0.
+        </p>
+        <input type="number" id="stock" formControlName="stock" />
+      </div>
+      <button
+        type="submit"
+        (click)="onSubmitForm()"
+        [disabled]="!newProductForm.valid"
+      >
+        Add Product
+      </button>
+    </form>
+  </div>
+</div>
