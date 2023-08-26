@@ -62,22 +62,19 @@ export class AddProductComponent implements OnInit {
   }
 
   onSubmitForm(): void {
-    console.log(this.newProductForm);
+    const newProduct: Product = {
+      id: this.getNextProductId(),
+      name: this.newProductForm.get('name')?.value,
+      description: this.newProductForm.get('description')?.value,
+      price: this.newProductForm.get('price')?.value,
+      category: this.newProductForm.get('category')?.value,
+      stock: this.newProductForm.get('stock')?.value,
+    };
 
-    this.newProductFormValue.id = this.getNextProductId();
-    this.newProductFormValue.name = this.newProductForm.get('name')?.value;
-    this.newProductFormValue.description =
-      this.newProductForm.get('description')?.value;
-    this.newProductFormValue.price = this.newProductForm.get('price')?.value;
-    this.newProductFormValue.category =
-      this.newProductForm.get('category')?.value;
-    this.newProductFormValue.stock = this.newProductForm.get('stock')?.value;
-
-    this.products_list.push(this.newProductFormValue);
+    this.products_list.push(newProduct);
     this.orderService.addNewProduct(this.products_list);
 
     this.newProductForm.reset();
-    console.log(this.newProductFormValue);
   }
 
   categoryValidator = (
