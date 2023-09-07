@@ -1,0 +1,36 @@
+.centered-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+  text-align: center; /* Optional for centering text horizontally */
+}
+
+/* Optional: Style for the h1 and h3 elements */
+h1 {
+  margin-top: 50px;
+  text-align: center;
+  font-size: 28px;
+  color: #333;
+}
+
+.centered-section h3 {
+  font-size: 18px;
+  color: #666;
+  max-width: 400px; /* Optional: Limit text width */
+}
+
+button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.back {
+  margin: 15px;
+}

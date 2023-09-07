@@ -1,0 +1,52 @@
+.welcome {
+  height: 85vh; /* Full viewport height */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; /* Hide any overflow content */
+}
+
+/* Style the text in the center */
+.center {
+  text-align: center;
+  color: #007bff; /* Text color */
+}
+
+/* Animation for the h1 element */
+.center h1 {
+  font-size: 3em;
+  animation: bounce 2s infinite; /* Bouncing animation */
+}
+
+/* Animation for the p element */
+.center p {
+  font-size: 1.5em;
+  animation: fadeIn 2s ease-in-out; /* Fade-in animation */
+}
+
+/* Keyframes for the bounce animation */
+@keyframes bounce {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-20px);
+  }
+  60% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Keyframes for the fade-in animation */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

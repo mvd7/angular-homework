@@ -1,0 +1,25 @@
+<div class="back">
+  <button class="back-button" (click)="onClickBack()">Create a Post!</button>
+</div>
+
+<section>
+  <div *ngFor="let post of posts$" class="tweet-container">
+    <div class="tweet-content">
+      <div class="tweet-header">
+        <h1>{{ post.author }}</h1>
+        <span class="tweet-time">{{
+          post.createdAt.toDate() | date : "short"
+        }}</span>
+      </div>
+      <h3>{{ post.title }}</h3>
+      <p>{{ post.content }}</p>
+      <div class="tweet-likes">
+        <span class="like-count">{{ post.likes }}</span>
+        <span class="heart-icon">&#9825;</span>
+      </div>
+    </div>
+    <button (click)="onClickDelete(post.id)" class="delete-button">
+      Delete
+    </button>
+  </div>
+</section>
