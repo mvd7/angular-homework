@@ -1,0 +1,23 @@
+<section class="center-screen" *ngIf="people.length === 0">
+  <div class="spinner-border text-warning mx-auto" role="status">
+    <span class="sr-only">Loading...</span>
+  </div>
+</section>
+
+<section class="container d-flex flex-wrap justify-content-around">
+  <div
+    class="card text-white bg-dark mb-3 mt-3"
+    style="max-width: 18rem"
+    *ngFor="let person of people"
+  >
+    <div class="card-header">
+      <b>{{ person.fullName }}</b>
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">Birth Year: {{ person.birthYear }}</h5>
+      <p class="card-text">Height: {{ person.height }}</p>
+      <p class="card-text">Gender: {{ person.gender }}</p>
+      <p class="card-text">Mass: {{ person.mass }}</p>
+    </div>
+  </div>
+</section>
