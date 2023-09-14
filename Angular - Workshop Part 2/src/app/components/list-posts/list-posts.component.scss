@@ -1,0 +1,119 @@
+/* Styles for the tweet container */
+.tweet-container {
+  background-color: #fff;
+  border: 1px solid #e1e8ed;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin: 10px 0;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Styles for the tweet content */
+.tweet-content {
+  flex-grow: 1;
+}
+
+/* Styles for the tweet header */
+.tweet-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.tweet-header h1 {
+  font-size: 18px;
+  margin-right: 10px;
+  font-weight: bold;
+}
+
+.tweet-time {
+  font-size: 14px;
+  color: #657786;
+}
+
+/* Styles for the tweet text */
+h3 {
+  font-size: 18px;
+  margin: 5px 0;
+}
+
+p {
+  font-size: 16px;
+  margin: 5px 0;
+}
+
+/* Styles for the "likes" section */
+.tweet-likes {
+  display: flex;
+  align-items: center;
+  color: #657786;
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+.heart-icon {
+  margin-left: 5px;
+  color: #e0245e;
+  font-size: 18px;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.heart-icon:hover {
+  transform: scale(150%);
+}
+
+.like-count {
+  font-weight: bold;
+}
+
+/* Styles for the delete button */
+.delete-button {
+  background-color: #e0245e;
+  color: #fff;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-right: 10px; /* Add some spacing between delete and edit buttons */
+}
+
+/* Hover effect for the delete button */
+.delete-button:hover {
+  background-color: #c82350;
+}
+
+/* Styles for the edit button */
+.edit-button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+/* Hover effect for the edit button */
+.edit-button:hover {
+  background-color: #0056b3;
+}
+
+button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.back {
+  display: flex;
+  justify-content: center;
+  margin: 15px;
+}
